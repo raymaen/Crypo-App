@@ -1,0 +1,1 @@
+export const GET_TRADING_DATA = 'GET_TRADING_DATA'

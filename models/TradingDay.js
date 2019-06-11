@@ -10,7 +10,15 @@ const TradingDaySchema = new Schema({
   date: {
     type: String,
     default: "20190601"
-  } 
+  },
+  bestTrades: {
+    type: Array,
+    default : []
+  },
+  winnerTrade : {
+      type : Object,
+      default : {}
+  }
 });
 
 module.exports = User = mongoose.model('TradingDay', TradingDaySchema);

@@ -2,10 +2,13 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
-const logger = require('morgan');
+const logger = require("morgan");
 const cryptoRoutes = require("./api/routes/cryptoRoutes");
 
-const db = 'mongodb://localhost:27017/crypto-nab'
+const db =  require("./config").mongoURI
+  // process.env.NODE_ENV === "production"
+  //   ? require("./config").mongoURI
+  //   : "mongodb://localhost:27017/crypto-nab";
 
 mongoose
   .connect(db, {
@@ -21,19 +24,18 @@ const port = process.env.PORT || "5000";
 app.use(express.json());
 
 // Logger
-app.use(logger('combined'))
+app.use(logger("combined"));
 
 // Routes
 app.use("/api/crypto", cryptoRoutes);
 
-
 // Serve static assets if in production
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   // Set static folder
-  app.use(express.static(path.join(__dirname, "client", "build")))
+  app.use(express.static(path.join(__dirname, "client", "build")));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
 
