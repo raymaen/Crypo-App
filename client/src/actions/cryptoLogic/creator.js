@@ -37,8 +37,8 @@ function createTradingDays() {
     entries.forEach(entry => {
       const price = Number(entry[1]);
 
-      // Make a shift somewhere between 0 and 10 %
-      const multiplier = Math.random() * 0.1;
+      // Make a shift somewhere between 0 and 5 %
+      const multiplier = Math.random() * 0.5;
 
       // 50% chance to go up or down
       let newPrice =

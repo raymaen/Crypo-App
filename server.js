@@ -16,7 +16,7 @@ mongoose
     useCreateIndex: true
   })
   .then(() => console.log("DB connected succesfully!"))
-  .catch(err => console.log("Db connection error"));
+  .catch(err => console.log("Db connection error" , err));
 
 const port = process.env.PORT || "5000";
 
