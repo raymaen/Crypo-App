@@ -29,20 +29,17 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     // Drop collection
-    console.log('1')
+
     await TradingDay.collection.drop();
-    console.log('2')
     await TradingDay.insertMany(req.body.data);
-    console.log('3')
     const cryptoData = await TradingDay.find({});
-    console.log('4')
 
     res.json({
       cryptoData
     });
   } catch (err) {
-    console.log(err)
-    res.send(err);
+    console.log(err);
+    res.status(400)
   }
 });
 
