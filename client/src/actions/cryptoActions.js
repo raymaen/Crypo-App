@@ -1,7 +1,6 @@
 import axios from "axios";
 
 import { GET_TRADING_DATA } from "./types";
-import cryptoData from "./cryptoLogic/cryptoData";
 
 // Get trading data from db
 export const getCryptoData = () => dispatch => {
@@ -18,11 +17,8 @@ export const getCryptoData = () => dispatch => {
 
 // Set crypto data from db
 export const createCryptoData = () => dispatch => {
-  const reqBody = {
-    data: cryptoData()
-  };
   axios
-    .post("/api/crypto", reqBody)
+    .post("/api/crypto")
     .then(res =>
       dispatch({
         type: GET_TRADING_DATA,

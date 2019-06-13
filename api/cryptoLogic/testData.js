@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   {
     currency: "BTC",
     date: "20180507",

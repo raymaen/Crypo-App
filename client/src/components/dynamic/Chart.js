@@ -79,7 +79,10 @@ class Chart extends PureComponent {
 Chart.propTypes = {
     dayData : PropTypes.arrayOf(PropTypes.shape({
         currency: PropTypes.string.isRequired,
-        quotes : PropTypes.array.isRequired
+        quotes : PropTypes.arrayOf(PropTypes.shape({
+          time : PropTypes.string,
+          price : PropTypes.number
+        }))
     }))
 }
 

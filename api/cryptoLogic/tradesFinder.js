@@ -45,5 +45,5 @@ tradingDay.forEach((coinData, i) => {
 
 }
 
-export default bestTradesFinder
+module.exports = bestTradesFinder
 

@@ -86,4 +86,4 @@ function createTradingDays() {
 
   return tradingDays
 }
-export default createTradingDays;
+module.exports = createTradingDays;

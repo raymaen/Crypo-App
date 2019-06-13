@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const TradingDay = require("../../models/TradingDay");
+const cryptoData = require('../cryptoLogic/cryptoData');
 
 // @route   GET /api/crypto/ping
 // @desc    test route
@@ -27,11 +28,12 @@ router.get("/", async (req, res) => {
 // @access  Public
 
 router.post("/", async (req, res) => {
+  const data = cryptoData()
   try {
     // Drop collection
 
     await TradingDay.collection.drop();
-    await TradingDay.insertMany(req.body.data);
+    await TradingDay.insertMany(data);
     const cryptoData = await TradingDay.find({});
 
     res.json({
