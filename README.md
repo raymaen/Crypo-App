@@ -2,7 +2,18 @@
 Best trades finder. Create random crypto data and the program will find the best trades.
 
 ### How to start
-Clone this repo
+1) Clone this repo
+```
+https://github.com/raymaen/Crypto-App.git
+```
+
+2) Install Client and server dependencies
+```
+npm install
+```
+```
+npm run client-install
+```
 
 Run client and server
 ```
@@ -13,12 +24,12 @@ $npm run dev
 ### Testing: 
 Server tests -
 ```
-$npm run test-server. 
+$npm run test-server
 ```
 
 Client tests -
 ```
-$npm run test-client.
+$npm run test-client
 ```
 
 
