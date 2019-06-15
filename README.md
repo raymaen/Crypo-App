@@ -2,11 +2,25 @@
 Best trades finder. Create random crypto data and the program will find the best trades.
 
 ### How to start
-Run client and server : $npm run dev
+Clone this repo
+
+Run client and server
+```
+$npm run dev
+```
+
 
 ### Testing: 
-Server tests - $npm run test-server. 
-Client tests - $npm run test-client.
+Server tests -
+```
+$npm run test-server. 
+```
+
+Client tests -
+```
+$npm run test-client.
+```
+
 
 ### What does this app do?
 1) Api that creates random trading data
